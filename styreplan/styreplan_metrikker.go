@@ -63,6 +63,5 @@ func dagerTil(dato time.Time) int {
 
 func lesNøkkelFraMiljøvar() string {
 	nøkkel := os.Getenv(AZURE_TOKEN_ENV_NØKKEL)
-	nøkkel = "ett&eller=annet&se=2023-04-13T19:22:04Z&s=sdfsdfsdf&"
 	return nøkkel
 }
