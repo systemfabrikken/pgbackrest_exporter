@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/woblerr/pgbackrest_exporter/styreplan"
 	"os"
 	"os/signal"
 	"path/filepath"
@@ -118,6 +119,11 @@ func main() {
 			"mgs", "Collecting metrics for specific backup type",
 			"type", *backrestBackupType)
 	}
+
+	// STYREPLAN ENDRING START
+	styreplan.Registrer_styreplan_metrikker(logger)
+	// STYREPLAN ENDRING SLUTT
+
 	// Setup parameters for exporter.
 	backrest.SetPromPortandPath(*promPort, *promPath, *promTLSConfigFile)
 	level.Info(logger).Log(
