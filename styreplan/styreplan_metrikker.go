@@ -17,8 +17,8 @@ var /* const */ r = regexp.MustCompile("se=([0-9\\-]+T[0-9:]+Z)")
 func Registrer_styreplan_metrikker(logger log.Logger) {
 	err := prometheus.Register(prometheus.NewGaugeFunc(
 		prometheus.GaugeOpts{
-			Name: "pgbackrest_azure_nokkelutloeper",
-			Help: "Antall dager til azzure nøkkel utløper",
+			Name: "pgbackrest_azuretoken_dagertilutloeper",
+			Help: "Antall dager til azure sas token lest fra env.var " + AZURE_TOKEN_ENV_NØKKEL + " utløper",
 		},
 		func() float64 {
 			level.Debug(logger).Log("msg", "Samler data for azure nøkkel")
